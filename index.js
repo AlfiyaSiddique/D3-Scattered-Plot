@@ -34,6 +34,8 @@ function drawPlot(dataset) {
     .style("color", "white")
     .style("padding", "10px")
     .style("border-radius", "10px")
+     .style("top", "0px")
+    .style("left", "0px");
 
   const xAxisScale = d3
     .scaleLinear()
@@ -63,6 +65,16 @@ function drawPlot(dataset) {
     .call(yAxis)
     .attr("id", "y-axis")
     .attr("transform", `translate(${padding}, ${0})`);
+  
+       d3.select("#plot")
+      .append('div')
+      .style('transform', 'rotate(90deg)')
+      .style('font-size', 18)
+      .text('Time in Minutes')
+      .attr("fill", "white")
+      .style("position", "absolute")
+      .style("left", "20px")
+      .style("top", "400px")
 
   svg
     .selectAll(".dot")
